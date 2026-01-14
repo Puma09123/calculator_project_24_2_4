@@ -1,2 +1,18 @@
-	•	__init__.py
-	•	test_calculator.py
+import pytest
+from calculator.calculator import Calculator
+
+class TestCalculator:
+    def setup_method(self):
+        self.calc = Calculator()
+
+    def test_add(self):
+        assert self.calc.add(3, 5) == 8
+
+    def test_subtract(self):
+        assert self.calc.subtract(10, 4) == 6
+
+    def test_multiply(self):
+        assert self.calc.multiply(6, 7) == 42
+
+    def test_divide(self):
+        assert self.calc.divide(20, 4) == 5
